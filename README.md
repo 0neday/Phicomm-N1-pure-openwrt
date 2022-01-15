@@ -18,6 +18,7 @@ sudo apt-get install -y $(curl -fsSL git.io/ubuntu-2004-server)
  git clone --depth 1 https://github.com/ophub/amlogic-s9xxx-armbian.git 
  mkdir -p amlogic-s9xxx-armbian/compile-kernel/kernel/
  cd amlogic-s9xxx-armbian/compile-kernel/kernel/
+
  # select 5.4.170 version from commit
  wget -c https://github.com/unifreq/linux-5.4.y/archive/645cb6197357df079d11c56717165e32d88eef7b.zip
  unzip 645cb6197357df079d11c56717165e32d88eef7b.zip
