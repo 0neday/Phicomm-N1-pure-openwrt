@@ -65,7 +65,7 @@ dd if=/lib/u-boot/u-boot-2015-phicomm-n1.bin of=/dev/mmcblk2  bs=512 skip=1 seek
 
 ```
 
-#### License
+### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
 
 
