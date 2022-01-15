@@ -22,6 +22,12 @@ sudo apt-get install -y $(curl -fsSL git.io/ubuntu-2004-server)
  wget -c https://github.com/unifreq/linux-5.4.y/archive/645cb6197357df079d11c56717165e32d88eef7b.zip
  unzip 645cb6197357df079d11c56717165e32d88eef7b.zip
  mv linux-5.4.y* linux-5.4.y
+
+ # add 5.4.170 config 
+ wget -c https://raw.githubusercontent.com/ophub/amlogic-s9xxx-armbian/f5aa923bc7b4dbff6f7ec8b6f20d62a4c77c797e/compile-kernel/tools/config/config-5.4.170
+ mv config-5.4.170 linux-5.4.y/.config
+
+ # start recompile kernel
  cd ~/amlogic-s9xxx-armbian
  sudo ./recompile -d -k 5.4.170 -r unifreq -a false
 ```
