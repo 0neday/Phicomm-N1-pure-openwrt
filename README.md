@@ -1,6 +1,6 @@
 ### 参照 [amlogic-s9xxx-openwrt](https://github.com/ophub/amlogic-s9xxx-openwrt)
 
-改动的地方：内核及模块，根据这个[github里的资源自己编译](https://github.com/ophub/amlogic-s9xxx-openwrt)，
+改动的地方：内核及模块，根据这个github里的[资源自己编译](https://github.com/ophub/amlogic-s9xxx-openwrt)，
 root-default系统用的[openwrt自带的](https://downloads.openwrt.org/releases/21.02.1/targets/armvirt/64/openwrt-21.02.1-armvirt-64-default-rootfs.tar.gz)。
 
 ---
