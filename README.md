@@ -65,12 +65,8 @@ dd if=/dev/sda2 of=/dev/mmcblk2p2
 ```
 注意：写入后，不能再通过u盘启动其他系统。
 
-解决方法：写入N1 原始 u-boot，未测试，[理论上可以](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/188)
-```
-dd if=/lib/u-boot/u-boot-2015-phicomm-n1.bin of=/dev/mmcblk2  bs=1 count=444 conv=fsync
-dd if=/lib/u-boot/u-boot-2015-phicomm-n1.bin of=/dev/mmcblk2  bs=512 skip=1 seek=1 conv=fsync
-
-```
+解决方法：ophub 的 Initrd 有些问题。
+直接刷回 [Flippy](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013798141)的固件, 可以直接从u盘启动。
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
