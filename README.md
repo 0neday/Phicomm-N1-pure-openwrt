@@ -55,15 +55,17 @@ sudo ~/amlogic-s9xxx-openwrt/make -d -b s905d -k 5.4.170 -a false
 ```
 固件在 `out` 目录下 解压后，用 rufus 写入u盘。
 
-#### 3.已知问题
+#### 3.写入 eMMC
 
-因为没有用flipy的rootfs，[有很多脚本不能使用。只能用原始的方法 dd 写入分区](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/185)。
+因为没有用flipy的rootfs，有很多脚本不能使用。只能用原始的方法 [ dd 写入分区](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/185)。
 
 ```
 dd if=/dev/sda1 of=/dev/mmcblk2p1
 dd if=/dev/sda2 of=/dev/mmcblk2p2
 ```
 注意：写入后，不能再通过u盘启动其他系统。
+
+#### 4.问题及解决方法
 
 解决方法：因为 ophub 的 Initrd 有些问题。
 直接刷回 [Flippy](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013798141)的固件, 可以从u盘启动。
