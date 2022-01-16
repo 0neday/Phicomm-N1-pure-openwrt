@@ -68,7 +68,7 @@ dd if=/dev/sda2 of=/dev/mmcblk2p2
 #### 4.问题及解决方法
 
 解决方法：
-Change bootargs LABEL=ROOTFS to [ UUID={UUID}](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013812210)
+Change bootargs LABEL=ROOTFS to [ UUID={UUID}](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013812210) in `uEnv.txt`
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
