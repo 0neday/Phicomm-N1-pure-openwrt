@@ -65,8 +65,8 @@ dd if=/dev/sda2 of=/dev/mmcblk2p2
 ```
 注意：写入后，不能再通过u盘启动其他系统。
 
-解决方法：ophub 的 Initrd 有些问题。
-直接刷回 [Flippy](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013798141)的固件, 可以直接从u盘启动。
+解决方法：因为 ophub 的 Initrd 有些问题。
+直接刷回 [Flippy](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013798141)的固件, 可以从u盘启动。
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
