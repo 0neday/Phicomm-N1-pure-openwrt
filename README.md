@@ -67,8 +67,8 @@ dd if=/dev/sda2 of=/dev/mmcblk2p2
 
 #### 4.问题及解决方法
 
-解决方法：因为 ophub 的 Initrd 有些问题。
-直接刷回 [Flippy](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013798141)的固件, 可以从u盘启动。
+解决方法：
+Change bootargs [LABEL=ROOTFS to UUID={UUID}](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013812210)
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
