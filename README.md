@@ -10,7 +10,7 @@ root-default系统用的[openwrt自带的](https://downloads.openwrt.org/release
 ```
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
-sudo apt-get install -y $(curl -fsSL git.io/ubuntu-2004-server)
+sudo apt-get install -y  build-essential qemu-user-static gcc-aarch64-linux-gnu gcc-10-aarch64-linux-gnu pkg-config netfilter-persistent xz-utils rename tar openssl libidn11-dev libncurses-dev minizip bc asciidoc binutils bzip2 gawk ninja-build u-boot-tools gettext git fakeroot libncurses5-dev libz-dev patch python3 python2.7 pigz zstd zip unzip zlib1g-dev btrfs-progs bison uuid-runtime mount parted util-linux dosfstools subversion flex uglifyjs libpixman-1-dev git-core gzip p7zip p7zip-full msmtp libssl-dev vim busybox texinfo libglib2.0-dev xmlto qemu-utils qemu qemu-system qemu-user libidn11 initramfs-tools gdb-multiarch upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf wget curl swig rsync 
 ```
 ##### 1.2 git kernel source and compile kernel initrd and kernel modules etc
 ```
