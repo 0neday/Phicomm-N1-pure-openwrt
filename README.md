@@ -30,7 +30,7 @@ sudo apt-get install -y  build-essential qemu-user-static gcc-aarch64-linux-gnu 
 
  # start recompile kernel
  cd ~/amlogic-s9xxx-armbian
- sudo ./recompile -d -k 5.4.180 -r unifreq -a false -n -amlogic-s905d 
+ sudo ./recompile -d -k 5.4.180 -r unifreq -a false -n -amlogic-s9xxx
 ```
 after that get all zip file from `compile-kernel/output`
 
