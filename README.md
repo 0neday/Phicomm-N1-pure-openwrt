@@ -19,18 +19,18 @@ sudo apt-get install -y  build-essential qemu-user-static gcc-aarch64-linux-gnu 
  mkdir -p amlogic-s9xxx-armbian/compile-kernel/kernel/
  cd amlogic-s9xxx-armbian/compile-kernel/kernel/
 
- # select 5.4.170 version from commit
- wget -c https://github.com/unifreq/linux-5.4.y/archive/645cb6197357df079d11c56717165e32d88eef7b.zip
- unzip 645cb6197357df079d11c56717165e32d88eef7b.zip
+ # select 5.4.180 version from commit
+ wget -c https://github.com/unifreq/linux-5.4.y/archive/16ddf6290d54418345a954e2d0d99089a4743997.zip
+ unzip 16ddf6290d54418345a954e2d0d99089a4743997.zip
  mv linux-5.4.y* linux-5.4.y
 
- # add 5.4.170 config 
- wget -c https://raw.githubusercontent.com/ophub/amlogic-s9xxx-armbian/f5aa923bc7b4dbff6f7ec8b6f20d62a4c77c797e/compile-kernel/tools/config/config-5.4.170
- mv config-5.4.170 linux-5.4.y/.config
+ # add 5.4.180 config 
+ wget -c https://raw.githubusercontent.com/0118Add/amlogic-s9xxx-armbian/main/compile-kernel/tools/config/config-5.4.180
+ mv config-5.4.180 linux-5.4.y/.config
 
  # start recompile kernel
  cd ~/amlogic-s9xxx-armbian
- sudo ./recompile -d -k 5.4.170 -r unifreq -a false
+ sudo ./recompile -d -k 5.4.180 -r unifreq -a false
 ```
 after that get all zip file from `compile-kernel/output`
 
@@ -47,10 +47,10 @@ wget -c https://downloads.openwrt.org/releases/21.02.1/targets/armvirt/64/openwr
 
 # mv compiled kernel into 
 mkdir -p ~/amlogic-s9xxx-openwrt/amlogic-s9xxx/amlogic-kernel
-mv ~/amlogic-s9xxx-armbian/compile-kernel/output/5.4.170 ~/amlogic-s9xxx-openwrt/amlogic-s9xxx/amlogic-kernel
+mv ~/amlogic-s9xxx-armbian/compile-kernel/output/5.4.180 ~/amlogic-s9xxx-openwrt/amlogic-s9xxx/amlogic-kernel
 
 # make for N1
-sudo ~/amlogic-s9xxx-openwrt/make -d -b s905d -k 5.4.170 -a false
+sudo ~/amlogic-s9xxx-openwrt/make -d -b s905d -k 5.4.180 -a false
 
 ```
 固件在 `out` 目录下 解压后，用 rufus 写入u盘。
