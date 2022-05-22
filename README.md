@@ -63,11 +63,10 @@ sudo ~/amlogic-s9xxx-openwrt/make -d -b s905d -k 5.4.170 -a false
 dd if=/dev/sda1 of=/dev/mmcblk2p1
 dd if=/dev/sda2 of=/dev/mmcblk2p2
 ```
-注意：写入后，不能再通过u盘启动其他系统。
 
 #### 4.遗留问题
 
-无线蓝牙芯片无法正常驱动，请通过lan连接，地址 192.168.1.1
+无线蓝牙芯片无法正常驱动，请通过 LAN 连接，地址 192.168.1.1
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
