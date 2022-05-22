@@ -65,10 +65,9 @@ dd if=/dev/sda2 of=/dev/mmcblk2p2
 ```
 注意：写入后，不能再通过u盘启动其他系统。
 
-#### 4.问题及解决方法
+#### 4.遗留问题
 
-解决方法：
-Change bootargs LABEL=ROOTFS to [ UUID={UUID}](https://github.com/ophub/amlogic-s9xxx-openwrt/issues/189#issuecomment-1013812210) in `uEnv.txt`
+无线蓝牙芯片无法正常驱动，请通过lan连接，地址 192.168.1.1
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
