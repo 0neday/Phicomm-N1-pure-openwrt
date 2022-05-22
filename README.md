@@ -62,6 +62,7 @@ sudo ~/amlogic-s9xxx-openwrt/make -d -b s905d -k 5.4.170 -a false
 ```
 dd if=/dev/sda1 of=/dev/mmcblk2p1
 dd if=/dev/sda2 of=/dev/mmcblk2p2
+sync
 ```
 
 #### 4.遗留问题
