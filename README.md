@@ -78,31 +78,50 @@ cp *.txt /lib/firmware/brcm/
 
 # 
 wget http://ftp.iij.ad.jp/pub/linux/kernel/software/network/wireless-regdb/wireless-regdb-2022.06.06.tar.xz
-tar 
+tar -xzvf *.xz
 cp regulatory*  /lib/firmware
 
 reboot 
 
-#
-create interface wlan with ip 10.1.1.1 
 ```
-![photo_2022-07-01_07-51-23.jpg](https://s2.loli.net/2022/07/01/KgrtImoERLcenB7.jpg)
+
+#### Change eth0 using bridge mode 
+
+network
+```
+config device
+        option type 'bridge'
+        option name 'br-lan'
+        list ports 'eth0'
+        option mtu '1500'
+        option mtu6 '1500'
+
+config interface 'lan'
+        option proto 'static'
+        option device 'br-lan'
+        option ipaddr '192.168.1.2'
+        option netmask '255.255.255.0'
+        option gateway '192.168.1.1'
+        list dns '127.0.0.1'
 
 ```
-# dnsmasq.conf
-# dhcp for wlan
-dhcp-range = wlan, 10.1.1.100, 10.1.1.200, 1d
-dhcp-option = wlan, option:router, 10.1.1.1
-dhcp-option = wlan, option:dns-server, 10.1.1.1
-dhcp-option = wlan, option:netmask, 255.255.255.0
-dhcp-option = wlan, option:domain-search, n1.wlan
-dhcp-option = wlan, option:ntp-server, 10.1.1.1
-
-
- ```
- 
+wireless  add option network 'lan'
 ```
- iptables -t nat -A POSTROUTING -o eth0  -j MASQUERADE
+config wifi-iface 'default_radio0'
+        option network 'lan'
+```
+
+firewall 
+
+```
+config zone
+        option name 'lan'
+        option input 'ACCEPT'
+        option output 'ACCEPT'
+        option forward 'ACCEPT'
+        list network 'lan'
+        list network 'lan6'
+
 ```
 
 ### License
