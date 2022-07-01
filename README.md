@@ -73,8 +73,12 @@ sync
  ```
 opkg install kmod-brcmfmac kmod-brcmutil kmod-cfg80211 kmod-mac80211 hostapd-common wpa-cli wpad-basic iw cypress-firmware-43455-sdio	
 
-# copy txt regulatory 
+# copy txt  from flippy firmware
 cp *.txt /lib/firmware/brcm/
+
+# 
+wget http://ftp.iij.ad.jp/pub/linux/kernel/software/network/wireless-regdb/wireless-regdb-2022.06.06.tar.xz
+tar 
 cp regulatory*  /lib/firmware
 
 reboot 
