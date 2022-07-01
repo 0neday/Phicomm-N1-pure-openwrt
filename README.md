@@ -96,6 +96,10 @@ dhcp-option = wlan, option:ntp-server, 10.1.1.1
 
 
  ```
+ 
+```
+ iptables -t nat -A POSTROUTING -o eth0  -j MASQUERADE
+```
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
