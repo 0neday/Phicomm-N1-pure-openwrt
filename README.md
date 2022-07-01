@@ -81,7 +81,10 @@ reboot
 
 #
 create interface wlan with ip 10.1.1.1 
+```
+![photo_2022-07-01_07-51-23.jpg](https://s2.loli.net/2022/07/01/KgrtImoERLcenB7.jpg)
 
+```
 # dnsmasq.conf
 # dhcp for wlan
 dhcp-range = wlan, 10.1.1.100, 10.1.1.200, 1d
