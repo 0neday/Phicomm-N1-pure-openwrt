@@ -65,9 +65,34 @@ dd if=/dev/sda2 of=/dev/mmcblk2p2
 sync
 ```
 
-#### 4.遗留问题
+~~ #### 4.遗留问题 ~~
 
-无线蓝牙芯片无法正常驱动，请通过 LAN 连接，地址 192.168.1.1
+~~ 无线蓝牙芯片无法正常驱动，请通过 LAN 连接，地址 192.168.1.1 ~~
+
+#### 4. 无线驱动
+ ```
+opkg install kmod-brcmfmac kmod-brcmutil kmod-cfg80211 kmod-mac80211 hostapd-common wpa-cli wpad-basic iw cypress-firmware-43455-sdio	
+
+# copy txt regulatory 
+cp *.txt /lib/firmware/brcm/
+cp regulatory*  /lib/firmware
+
+reboot 
+
+#
+create interface wlan with ip 10.1.1.1 
+
+# dnsmasq.conf
+# dhcp for wlan
+dhcp-range = wlan, 10.1.1.100, 10.1.1.200, 1d
+dhcp-option = wlan, option:router, 10.1.1.1
+dhcp-option = wlan, option:dns-server, 10.1.1.1
+dhcp-option = wlan, option:netmask, 255.255.255.0
+dhcp-option = wlan, option:domain-search, n1.wlan
+dhcp-option = wlan, option:ntp-server, 10.1.1.1
+
+
+ ```
 
 ### License
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.htmlT)
