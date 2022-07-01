@@ -87,7 +87,8 @@ reboot
 
 #### Change eth0 using bridge mode 
 
-network
+/etc/config/network
+
 ```
 config device
         option type 'bridge'
@@ -105,13 +106,20 @@ config interface 'lan'
         list dns '127.0.0.1'
 
 ```
-wireless  add option network 'lan'
+/etc/config/wireless  add option network 'lan'
+
 ```
 config wifi-iface 'default_radio0'
+        option device 'radio0'
+        option mode 'ap'
+        option ssid 'homeassisstant'
+        option encryption 'psk2+ccmp'
         option network 'lan'
+        option key 'password'
+
 ```
 
-firewall 
+/etc/config/firewall 
 
 ```
 config zone
