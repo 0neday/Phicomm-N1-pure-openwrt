@@ -131,7 +131,7 @@ config zone
         list network 'lan6'
 
 ```
-### 5. 蓝牙驱动
+#### 5. 蓝牙驱动
 [N1 蓝牙接入小米BLE设备](https://bbs.hassbian.com/forum.php?mod=viewthread&tid=19696&page=1&extra=#pid512385)
 
 ### License
